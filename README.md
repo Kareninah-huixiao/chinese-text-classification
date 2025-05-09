@@ -50,16 +50,14 @@ pip install -r requirements.txt
 
 ```
 .
-├── data/                    # 数据目录
-│   ├── raw/                # 原始数据集
-│   ├── processed/          # 处理后的数据
-│   └── .gitkeep           # 保持空目录的占位文件
 ├── models/                 # 模型目录
 │   ├── base_model.py      # 基础模型定义
-│   ├── traditional_models.py  # 传统机器学习模型
-│   └── saved/             # 保存训练好的模型
+│   └── traditional_models.py  # 传统机器学习模型
 ├── utils/                  # 工具函数
-│   └── data_processor.py  # 数据处理工具
+│   ├── data_processor.py  # 数据处理工具
+│   ├── lstm_tokenizer.py  # RNN系列的模型分词器
+│   └── __init__.py        # 工具包初始化文件
+├── test_all_models.py     # 模型测试脚本
 ├── train.py               # 训练脚本
 ├── preprocess.py          # 数据预处理脚本
 ├── requirements.txt       # 项目依赖
@@ -76,6 +74,11 @@ python preprocess.py
 2. 训练模型：
 ```bash
 python train.py
+```
+
+3. 测试模型：
+```bash
+python test_all_models.py
 ```
 
 ## 配置说明
